@@ -1,11 +1,14 @@
 
-const { getDigimons, loadData } = require('../controllers/digimonController');
+const { getDigimons, loadData, getDigimonById, createDigimon, updateDigimon, deleteDigimon } = require('../controllers/digimonController');
 const express = require('express');
 
-const digimonsRouter = express.Router();
-console.log("Digimons router loaded"); // <-- Esto confirma si Node lo carga
+const digimonsRouter = require('express').Router()
 
-digimonsRouter.get('/', getDigimons);
-digimonsRouter.get('/loadData', loadData);
+digimonsRouter.get('/', getDigimons)
+//digimonsRouter.get('/loadData', loadData)
+digimonsRouter.get('/:id', getDigimonById)
+digimonsRouter.post('/', createDigimon)
+digimonsRouter.put('/:id', updateDigimon)
+digimonsRouter.delete('/:id', deleteDigimon)
 
 module.exports = digimonsRouter;
