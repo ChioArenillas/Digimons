@@ -28,7 +28,15 @@ db.on("disconected", () => {
 app.use(express.json())
 app.use(cors());
 
-app.use('/digimons',digimonsRouter)
+app.use('/digimons', digimonsRouter);
+
+app._router.stack.forEach(r => {
+  if (r.route && r.route.path) {
+    console.log(r.route.path, Object.keys(r.route.methods));
+  }
+});
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
