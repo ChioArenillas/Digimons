@@ -36,7 +36,7 @@ export const updateDigimon = async (id, bodyParam) => {
 
 export const createDigimon = async (bodyParam) => {
     const response = await fetch('http://localhost:9000/digimons/',{
-        method: 'PUT',
+        method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: bodyParam
     })

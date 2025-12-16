@@ -70,7 +70,7 @@ export default function CreateDigimonDetailsComponent(props) {
                                 <Field type='text' name='evolucion' placerholder='Evolucion...' />
                                 <ErrorMessage name='evolucion' component='div' />
                             </div>
-                            <button type= 'submit'>Crear Digimon</button>
+                            <button type='submit'>Crear Digimon</button>
                         </Form>)
                     }
                 </Formik>
